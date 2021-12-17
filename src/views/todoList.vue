@@ -7,8 +7,94 @@
       <div id="todo">
   <h2>客戶清單建立中  </h2>
    
+ <!-- <el-radio-group v-model="direction">
+  <el-radio label="ltr">left to right</el-radio>
+  <el-radio label="rtl">right to left</el-radio>
+  <el-radio label="ttb">top to bottom</el-radio>
+  <el-radio label="btt">bottom to top</el-radio>
+</el-radio-group> -->
+
+<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+  open
+</el-button>
+
+<el-drawer
+  title="I am the title"
+  :visible.sync="drawer"
+  :direction="ltr"
+  :before-close="handleClose">
+  <span>
+    
+    Hi, there!</span>
+</el-drawer>
+
+     
+<el-calendar>
+  <!-- Use 2.5 slot syntax. If you use Vue 2.6, please use new slot syntax-->
+  <template
+    slot="dateCell"
+    slot-scope="{date, data}">
+    <p :class="data.isSelected ? 'is-selected' : ''">
+      {{ data.day.split('-').slice(1).join('/') }} {{ data.isSelected ? '✔️' : ''}}
+ 
+    </p>
+    
+ <span v-if="data.day.split('-').slice(2) == 19"  > ss </span>
 
 
+<div v-for="todo in todos"
+            class="text-xs" > 
+            
+              <!-- {{ todo.creatTime.split('-').slice(2)  }} -->
+              {{ parseInt(todo.creatTime.split('-').slice(2))  }}
+               {{ data.day.split('-').slice(2) }} v.s {{ todo.creatTime.split('-').slice(2) }}
+<div v-if="parseInt(data.day.split('-').slice(2))  == parseInt(todo.creatTime.split('-').slice(2)) "  > Here ! {{ todo.text }} </div>
+   <!-- <div v-if="data.day.split('-').slice(2)  == todo.creatTime.split('-').slice(2) "  > Here ! {{ todo.text }} </div> -->
+             
+
+        </div> 
+
+
+  </template>
+</el-calendar>
+
+
+
+<hr>  
+{{ todos[0].creatTime.slice(3, 2) }}
+
+<div v-for="todo in todos"
+            class="border-2 border-gray-200 rounded-full py-1 px-4 my-2" > 
+             {{ todo.text }}
+              {{ todo.creatTime.split('-').slice(2)  }}
+               
+        </div> 
+ss::
+{{ v2 }}
+
+
+ <p>Component value：{{ v2 }}</p>
+    <el-date-picker
+      v-model="v2"
+      type="daterange"
+      start-placeholder="Start date"
+      end-placeholder="End date"
+      :default-time="['00:00:00', '23:59:59']">
+    </el-date-picker> 
+
+<!-- <el-date-picker
+      v-model="v2"
+      type="daterange"
+      align="right"
+      unlink-panels
+      range-separator="To"
+      start-placeholder="Start date"
+      end-placeholder="End date"
+      :picker-options="pickerOptions">
+    </el-date-picker> -->
+    <hr>
+<!-- {{ Daychker }} -->
+<hr>
 <div class="grid grid-cols-2 gap-1">
   <div>
     <form v-on:submit.prevent="addTodo">
@@ -17,6 +103,15 @@
            placeholder="Add new todo"
            class="px-10 m-3 py-2 rounded-full bg-gray-100 "
            /> 
+    <div class="block">
+      <span class="demonstration">Picker with quick options</span>
+      <el-date-picker
+        v-model="newTodo.creatTime"
+        type="date"
+        placeholder="Pick a day"
+        :picker-options="pickerOptions">
+      </el-date-picker>
+    </div>       
   </form> 
   </div> 
   <div>
@@ -25,6 +120,9 @@
   </div>
 </div> 
 
+{{ newTodo.creatTime }}
+<hr>
+{{ g }}
       <ul class="todo-list  ">
         <li v-for="todo in todos"
             class="border-2 border-gray-200 rounded-full py-1 px-4 my-2" > 
@@ -33,6 +131,8 @@
                     placeholder="Add new todo"
                     class="px-10 m-3 py-2 rounded-full bg-gray-100 focus:ring-2 focus:ring-blue-600 "  />  
 
+
+{{ todo.creatTime }}
             <button class="text-ms font-blod text-red-100 m-1 px-3 py-0.5 ml-4 rounded-full bg-red-400"
                   @click="removeTodo(todo.key)">刪除</button>
 
@@ -48,36 +148,30 @@
 
     {{ value3 }}
     <hr>
+
+    
     
     <div class="block">
-  <span class="demonstration">Display all tags (default)</span>
-  <el-cascader
-  v-model="value3"
-    :options="options"
-    :props="props"
-    clearable></el-cascader>
-</div>
+      <span class="demonstration">Display all tags (default)</span>
+      <el-cascader
+      v-model="value3"
+        :options="options"
+        :props="props"
+        clearable></el-cascader>
+    </div>
 
 
 
      <div class="block">
-    <span class="demonstration">Default</span>
-    <el-date-picker
-      v-model="value1"
-      multiple
-      type="date"
-      placeholder="Pick a day">
-    </el-date-picker>
-  </div>
-  <div class="block">
-    <span class="demonstration">Picker with quick options</span>
-    <el-date-picker
-      v-model="value2"
-      type="date"
-      placeholder="Pick a day"
-      :picker-options="pickerOptions">
-    </el-date-picker>
-  </div>
+      <span class="demonstration">Default</span>
+      <el-date-picker
+        v-model="value1"
+        multiple
+        type="date"
+        placeholder="Pick a day">
+      </el-date-picker>
+    </div>
+    
 
   </div>
 
@@ -88,6 +182,7 @@
 
 <script>
 import { WordDataServiceEXP } from "../services/TodoService";
+// import {fb, db, datab} from '../firebase';
 // import TutorialDetails from "./WordMdf"; // 連接至 Mdf 的部分
 
 export default {
@@ -95,9 +190,21 @@ export default {
   components: {   },
   data() {
     return {
+
+        // - - - - 
+      drawer: false,
+        direction: 'rtl',
+
+        // - - - - 
       showModal:false,
+      g:"",
+      d:"",
+      v2:"",
       todos: [], 
-      newTodo:{ text:"",}, 
+      newTodo:{ 
+        text:"",
+        creatTime: "", // Date 
+        }, 
 
       // - - - - - 
 
@@ -129,6 +236,7 @@ export default {
         value1: '',
         value2: '',
         value3: '',
+         value33: new Date(),
 
         // - - - - - -
 
@@ -205,11 +313,38 @@ export default {
     };
   },
   methods: { 
+
+    handleClose(done) {
+        this.$confirm('Are you sure you want to close this?')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
     
+
+    // 這邊理解安排，看看todoList 相關參考的範例。
+    // https://codepen.io/Jasonjam/pen/WPBbGG
+
+    getTimeTrans(newTime) {
+			if (typeof newTime === 'undefined') return;
+			let time = new Date(newTime);
+			let year = time.getFullYear();
+			let month = ["Jan","Feb","Mar","Apr","May","June",
+							 "July","Aug","Sep","Oct","Nov","Dec"]
+			let day = time.getDate();
+			let week = time.day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+			let hour = time.getHours();
+			let minute = time.getMinutes();
+			return month[time.getMonth()] + "/" + (parseInt(day, 10) < 10 ? '0' + day:day)  + "/" + year + "<br> " + hour + ":" + (parseInt(minute, 10) < 10 ? '0' + minute : minute) + "&nbsp;" + week[time.getDay()];
+		},
      // Push new post in to Todos
     addTodo(){
+      // this.newTodo.creatTime= WordDataServiceEXP.getdb();
+      // this.newTodo.creatTime = getTimeTrans(this.newTodo.creatTime) ;
+      this.newTodo.creatTime = '2020-12-02' ;
       WordDataServiceEXP.create(this.newTodo)
-      this.newTodo.text = ''
+      
 
     },
     updateTodo(key, value) {
@@ -259,18 +394,43 @@ export default {
         });
     }, 
     onDataChange(items) {
-        let _tutorials = []; 
-
+        let _tutorials = [];  
         items.forEach((item) => {
           let key = item.key;
           let data = item.val();
           _tutorials.push({
             key: key, 
-            text  : data.text, 
+            text     : data.text, 
+            creatTime: data.creatTime,
           });
         });
         this.todos = _tutorials; 
-    },   
+    },  
+    
+    
+    getTime(key){
+      var today = new Date(); 
+      var day = today.getDate();
+      var month = today.getMonth() + 1;
+      var year = today.getFullYear();
+      let weekary_En = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      let weekary_Cn = ['日','一','二','三','四','五','六'];
+
+      let preweek = today.getDay(); 
+			let week = weekary_Cn[preweek] ;  
+
+    // - - - - - 
+    let str = ''; 
+
+       
+      if( key == "En"){  str = year+"-"+month+"-"+day+"("+weekary_En[preweek]+")" ; }
+      else if( key == 'Cn'){  str = year+"-"+month+"-"+day+"("+weekary_Cn[preweek]+")" ; }
+      else{ str = today }
+    return str
+
+    
+
+    },
   },
   watch: {
      
@@ -279,7 +439,35 @@ export default {
     //   this.message = "";
     // },
   },
+  computed: {
+    famous: function() {
+      return this.stories.filter(function(item) {
+        return item.upvotes > 30;
+      })
+    },
+    Daychker: function(Mon,Day) {
+      return this.todo.filter(function(item) {
+        return item.creatTime == '2021-12-02';
+      })
+    },
+    poschker_1: function() {
+      return this.odrList.filter(function(item) {
+        return item.NowPos == 1;
+      })
+    },
+    poschker_2: function() {
+      return this.odrList.filter(function(item) {
+        return item.NowPos == 2;
+      })
+    },
+    poschker_3: function() {
+      return this.odrList.filter(function(item) {
+        return item.NowPos == 3;
+      })
+    }
+  },
   mounted() {
+    this.g=this.getTime();
     WordDataServiceEXP.getAll().on("value", this.onDataChange); 
   },
   beforeDestroy() {
@@ -292,5 +480,7 @@ export default {
 <style scoped>
 
 
-</style>>
+</style>
+
+
 

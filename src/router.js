@@ -16,10 +16,15 @@ const router =  new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
+    // {
+    //   path: "/",
+    //   name: "home",
+    //   component: Home
+    // },
     {
-      path: "/",
-      name: "home",
-      component: Home
+         path: "/home",
+         name: "home",
+         component: Home
     },
     {
       path: "/user",
@@ -82,6 +87,12 @@ const router =  new Router({
     //   component: () =>
     //     import("./views/todoList.vue")
     // },
+    {
+      path: "/",
+      name: "todoList",
+      component: () =>
+        import("./views/todoList.vue")
+    },
     {
       path: "/todoList",
       name: "todoList",

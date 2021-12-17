@@ -7,27 +7,31 @@
  
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+
             <li class="nav-item active">
-              <router-link to="/" class="nav-link">首頁</router-link>
+              <router-link to="/home" class="nav-link">首頁</router-link>
             </li>
-            <li class="nav-item">
+
+            <!-- <li class="nav-item">
               <router-link to="/wordList" class="nav-link">尖石.泰雅族語</router-link>
             </li>
             <li class="nav-item">
               <router-link to="/wordList" class="nav-link">文化課程札記</router-link>
-            </li>
+            </li>-->
             <li class="nav-item">
-              <router-link to="/todoList" class="nav-link">文化素養</router-link>
-            </li>
+              <router-link to="/todoList" class="nav-link">配送清單</router-link>
+            </li> 
+
+
             <!-- <li class="nav-item">
               <router-link to="/imgList" class="nav-link">IMG-List</router-link>
             </li> -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <router-link to="/UpLoadFile" class="nav-link">教案列表</router-link>
             </li>
 
             <li class="nav-item">
-              <router-link to="/FileZone" class="nav-link">檔案上傳</router-link>
+              <router-link to="/FileZone" class="nav-link">檔案上傳</router-link> 
             </li> 
 
             <li class="nav-item"> 
@@ -62,9 +66,7 @@
                        近期課表動態
               </a>
             </li>
-
-            
-<!--             
+           
             <li class="nav-item">
               <router-link to="/about" class="nav-link">About</router-link>
             </li>

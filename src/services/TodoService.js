@@ -7,8 +7,13 @@ const db_temp = fb.database().ref("/todos");
 // const db_temp = fb.ref("/words");
 
 class WordDataService {
+
   getAll() {
     return db_temp;
+  }
+
+  getdb() {
+    return datab.ServerValue.TIMESTAMP;
   }
 
   create(word) {
