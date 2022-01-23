@@ -17,21 +17,21 @@
              <el-tabs v-model="activeName" @tab-click="handleClick">
                 <el-tab-pane label="1月" name="first">
                     <el-checkbox-group v-model="datePicked._1M"   >  
-                        <el-checkbox-button label=26 disabled  ></el-checkbox-button>
-                        <el-checkbox-button label=27 disabled  ></el-checkbox-button>
-                        <el-checkbox-button label=28 disabled  ></el-checkbox-button>
-                        <el-checkbox-button label=29 disabled  ></el-checkbox-button>
-                        <el-checkbox-button label=31 disabled  ></el-checkbox-button> 
-                        <el-checkbox-button label=01    @change="transDay_Mdf1(1)" ></el-checkbox-button>
-                        <el-checkbox-button label=02    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=26 disabled   class="w-10" ></el-checkbox-button>
+                        <el-checkbox-button label=27 disabled   class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=28 disabled   class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=29 disabled   class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=31 disabled   class="w-10" ></el-checkbox-button> 
+                        <el-checkbox-button label=01    @change="transDay_Mdf1(1)"  class="w-10" ></el-checkbox-button>
+                        <el-checkbox-button label=02    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
                         <br>
-                        <el-checkbox-button label=03    @change="transDay_Mdf1(1)" ></el-checkbox-button>
-                        <el-checkbox-button label=04    @change="transDay_Mdf1(1)" ></el-checkbox-button>
-                        <el-checkbox-button label=05    @change="transDay_Mdf1(1)" ></el-checkbox-button>
-                        <el-checkbox-button label=06    @change="transDay_Mdf1(1)" ></el-checkbox-button>
-                        <el-checkbox-button label=07    @change="transDay_Mdf1(1)" ></el-checkbox-button>
-                        <el-checkbox-button label=08    @change="transDay_Mdf1(1)" ></el-checkbox-button>
-                        <el-checkbox-button label=09    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=03    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=04    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=05    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=06    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=07    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=08    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=09    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
                         <br>
                         <el-checkbox-button label=10    @change="transDay_Mdf1(1)" ></el-checkbox-button>
                         <el-checkbox-button label=11    @change="transDay_Mdf1(1)" ></el-checkbox-button>
@@ -322,117 +322,64 @@ export default {
         let ReB_date;
         let day = ['(日)','(一)','(二)','(三)','(四)','(五)','(六)'];
 
-// this.dispBkinfo._3M="CODE---> 第一階段"
-
-let tempString="";
-let get_M_CNT=1;
-
-// NT_01+NT_02+NT_03+
-let NT_01 ="" ;
-let NT_02 ="" ;
-let NT_03 ="" ;
-let NT_04 ="" ;
-// get_M_CNT
-
-switch(M_Type) {
-  case 1:
-      get_M_CNT = this.datePicked._1M.length ;
-    // code block
-    break;
-  case 2:
-      get_M_CNT = this.datePicked._2M.length ;
-    // code block
-    break;
-  case 3:
-      get_M_CNT = this.datePicked._3M.length ;
-    // code block
-    break;
-  case 4:
-      get_M_CNT = this.datePicked._4M.length ;
-    // code block
-    break;    
-  default:
-    // code block
-}
-
-// this.dispBkinfo._3M="CODE---> 第二階段:get_M_CNT="+ get_M_CNT;
-// tempString = tempString +'|'+ i; 
-
-for (let i = 0; i < get_M_CNT; i++) 
-{ 
-    switch(M_Type) {
-    case 1:
-        ReB_date = new Date('"2022-01-'+this.datePicked._1M[i]+'"') ;
-        tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+day[ReB_date.getDay()]  + " , ";
-        this.dispBkinfo._1M = tempString ;
-        // code block
-        break;
-    case 2:
-        ReB_date = new Date('"2022-02-'+this.datePicked._2M[i]+'"') ;
-        tempString = tempString + M_Type+"/"+this.datePicked._2M[i]+day[ReB_date.getDay()]  + " , ";
-        this.dispBkinfo._2M = tempString ;
-        // code block
-        break;
-    case 3:
-        ReB_date = new Date('"2022-03-'+this.datePicked._3M[i]+'"') ;
-        tempString = tempString + M_Type+"/"+this.datePicked._3M[i]+day[ReB_date.getDay()]  + " , ";
-        this.dispBkinfo._3M = tempString ;
-        // code block
-        break;
-    case 4:
-        ReB_date = new Date('"2022-04-'+this.datePicked._4M[i]+'"') ;
-        tempString = tempString + M_Type+"/"+this.datePicked._4M[i]+day[ReB_date.getDay()]  + " , ";
-        this.dispBkinfo._4M = tempString ; 
-        // code block
-        break;    
-    default:
-        // code block
-    }  
-
-    // tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+day[ReB_date.getDay()]  + " , ";
- 
-
-    // this.dispBkinfo._3M = tempString ;
-
-    // tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+day[ReB_date.getDay()]  + " , ";
-    // this.dispBkinfo._3M="CODE---> 第四階段:tempString = "+  tempString; 
-
-                    
-    // this.dispBkinfo.transOUTPUT =  M_Type+"/"+this.datePicked._1M[0]+day[ReB_date.getDay()];
-}
-// this.dispBkinfo.transOUTPUT = NT_01+NT_02+NT_03+NT_04; // 結合四個月 的註記。
-
-this.dispBkinfo.transOUTPUT = "即將為您安排在以下幾日: "+this.dispBkinfo._1M+this.dispBkinfo._2M+this.dispBkinfo._3M+this.dispBkinfo._4M;
-// this.dispBkinfo._1M = tempString;
+        let tempString="";
+        let get_M_CNT=1;
 
 
+        switch(M_Type) {
+        case 1:
+            get_M_CNT = this.datePicked._1M.length ;
+            // code block
+            break;
+        case 2:
+            get_M_CNT = this.datePicked._2M.length ;
+            // code block
+            break;
+        case 3:
+            get_M_CNT = this.datePicked._3M.length ;
+            // code block
+            break;
+        case 4:
+            get_M_CNT = this.datePicked._4M.length ;
+            // code block
+            break;    
+        default:
+            // code block
+        } ;
         
-        // this.dispBkinfo.transOUTPUT = ReB_date.getDay();
-
-        // - - - - - 
-        //   this.dispBkinfo.transOUTPUT =  M_Type+"/"+this.datePicked._1M[0]+day[ReB_date.getDay()];
-        // - - - - - 
-
-        //   const date1 = birthday.getDate();
-        //     const date12 = birthday.getDay();
-            
-      },
-
-      transDay(){
-          let ReB_date = new Date('"2022-01-'+this.datePicked._1M[0]+'"') ;
-
-        //   this.dispBkinfo.transOUTPUT =  "01/"+this.datePicked._1M[0]+"("+ReB_date.getDay()+")";
-
-        // const ReB_date = new Date('2022-01-05') ;
-        // this.dispBkinfo.transOUTPUT = "ddddd";
-        this.dispBkinfo.transOUTPUT = ReB_date.getDay();
-        //   this.dispBkinfo.transOUTPUT =  "01/"+this.datePicked._1M[0]+"("+ReB_date.getDay()+")";
- 
-        //   const date1 = birthday.getDate();
-        //     const date12 = birthday.getDay();
-            
-      },
-
+        for (let i = 0; i < get_M_CNT; i++) 
+        { 
+            switch(M_Type) {
+            case 1:
+                ReB_date = new Date('"2022-01-'+this.datePicked._1M[i]+'"') ;
+                tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+"("+ReB_date.getDay()  +")"+ " , ";
+                this.dispBkinfo._1M = tempString ;
+                // code block
+                break;
+            case 2:
+                ReB_date = new Date('"2022-02-'+this.datePicked._2M[i]+'"') ;
+                tempString = tempString + M_Type+"/"+this.datePicked._2M[i]+day[ReB_date.getDay()]  + " , ";
+                this.dispBkinfo._2M = tempString ;
+                // code block
+                break;
+            case 3:
+                ReB_date = new Date('"2022-03-'+this.datePicked._3M[i]+'"') ;
+                tempString = tempString + M_Type+"/"+this.datePicked._3M[i]+day[ReB_date.getDay()]  + " , ";
+                this.dispBkinfo._3M = tempString ;
+                // code block
+                break;
+            case 4:
+                ReB_date = new Date('"2022-04-'+this.datePicked._4M[i]+'"') ;
+                tempString = tempString + M_Type+"/"+this.datePicked._4M[i]+day[ReB_date.getDay()]  + " , ";
+                this.dispBkinfo._4M = tempString ; 
+                // code block
+                break;    
+            default:
+                // code block
+            }   
+        } ; 
+        this.dispBkinfo.transOUTPUT = "即將為您安排在以下幾日: "+this.dispBkinfo._1M+this.dispBkinfo._2M+this.dispBkinfo._3M+this.dispBkinfo._4M;    
+      }, 
 
     // 這邊理解安排，看看todoList 相關參考的範例。
     // https://codepen.io/Jasonjam/pen/WPBbGG
@@ -620,7 +567,7 @@ this.dispBkinfo.transOUTPUT = "即將為您安排在以下幾日: "+this.dispBki
 </script>
 
 <style scoped>
-
+ 
 
 </style>
 
