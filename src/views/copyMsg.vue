@@ -351,26 +351,26 @@ export default {
         { 
             switch(M_Type) {
             case 1:
-                ReB_date = new Date('"2022-01-'+this.datePicked._1M[i]+'"') ;
+                ReB_date = new Date('"2022-01-'+this.datePicked._1M[i].toString()+'"') ;
                 tempDay =day[ReB_date.getDay()].toString();
-                tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+tempDay+ " , ";
+                tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+tempDay+ " ..., ";
                 this.dispBkinfo._1M = tempString ;
                 // code block
                 break;
             case 2:
-                ReB_date = new Date('"2022-02-'+this.datePicked._2M[i]+'"') ;
+                ReB_date = new Date('"2022-02-'+this.datePicked._2M[i].toString()+'"') ;
                 tempString = tempString + M_Type+"/"+this.datePicked._2M[i]+day[ReB_date.getDay()]  + " , ";
                 this.dispBkinfo._2M = tempString ;
                 // code block
                 break;
             case 3:
-                ReB_date = new Date('"2022-03-'+this.datePicked._3M[i]+'"') ;
+                ReB_date = new Date('"2022-03-'+this.datePicked._3M[i].toString()+'"') ;
                 tempString = tempString + M_Type+"/"+this.datePicked._3M[i]+day[ReB_date.getDay()]  + " , ";
                 this.dispBkinfo._3M = tempString ;
                 // code block
                 break;
             case 4:
-                ReB_date = new Date('"2022-04-'+this.datePicked._4M[i]+'"') ;
+                ReB_date = new Date('"2022-04-'+this.datePicked._4M[i].toString()+'"') ;
                 tempString = tempString + M_Type+"/"+this.datePicked._4M[i]+day[ReB_date.getDay()]  + " , ";
                 this.dispBkinfo._4M = tempString ; 
                 // code block
