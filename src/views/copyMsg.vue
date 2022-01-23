@@ -350,7 +350,7 @@ export default {
                 // code block
                 break;
             case 3:
-                ReB_date = new Date('"2022-03-'+this.datePicked._3M[i].toString()+'"') ;
+                ReB_date = new Date('"2022-03-'+this.datePicked._3M[i].toString()+'"')  ;
                 tempString = tempString + M_Type+"/"+this.datePicked._3M[i]+day[ReB_date.getDay()]  + " , ";
                 this.dispBkinfo._3M = ReB_date ;
                 // code block
