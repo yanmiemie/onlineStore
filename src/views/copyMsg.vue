@@ -17,180 +17,167 @@
              <el-tabs v-model="activeName" @tab-click="handleClick">
                 <el-tab-pane label="1月" name="first">
                     <el-checkbox-group v-model="datePicked._1M"   >  
-                        <el-checkbox-button label=26 disabled   class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=27 disabled   class="w-10"></el-checkbox-button>
-                        <el-checkbox-button label=28 disabled   class="w-10"></el-checkbox-button>
-                        <el-checkbox-button label=29 disabled   class="w-10"></el-checkbox-button>
-                        <el-checkbox-button label=31 disabled   class="w-10" ></el-checkbox-button> 
-                        <el-checkbox-button label=01    @change="transDay_Mdf1(1)"  class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=02    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=26 disabled    ></el-checkbox-button>
+                        <el-checkbox-button label=27 disabled   ></el-checkbox-button>
+                        <el-checkbox-button label=28 disabled   ></el-checkbox-button>
+                        <el-checkbox-button label=29 disabled   ></el-checkbox-button>
+                        <el-checkbox-button label=31 disabled    ></el-checkbox-button> 
+                        <el-checkbox-button label=01    @change="transDay_Mdf1(1)"   ></el-checkbox-button>
+                        <el-checkbox-button label=02    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox-button label=03    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
-                        <el-checkbox-button label=04    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
-                        <el-checkbox-button label=05    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
-                        <el-checkbox-button label=06    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
-                        <el-checkbox-button label=07    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
-                        <el-checkbox-button label=08    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
-                        <el-checkbox-button label=09    @change="transDay_Mdf1(1)"  class="w-10"></el-checkbox-button>
+                        <el-checkbox-button label=03    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=04    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=05    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=06    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=07    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=08    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=09    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox-button label=10    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=11    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=12    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=13    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=14    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=15    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=16    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
+                        <el-checkbox-button label=10    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=11    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=12    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=13    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=14    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=15    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=16    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox-button label=17    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=18    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=19    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=20    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=21    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=22    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=23    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
+                        <el-checkbox-button label=17    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=18    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=19    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=20    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=21    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=22    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=23    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox-button label=24    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=25    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=26    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=27    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=28    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=29    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=30    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
+                        <el-checkbox-button label=24    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=25    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=26    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=27    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=28    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=29    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
+                        <el-checkbox-button label=30    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
                         <br> 
-                        <el-checkbox-button label=31    @change="transDay_Mdf1(1)" class="w-10" ></el-checkbox-button>
+                        <el-checkbox-button label=31    @change="transDay_Mdf1(1)"  ></el-checkbox-button>
                     </el-checkbox-group> 
                 </el-tab-pane>
                 <el-tab-pane label="2月" name="second">
                     <el-checkbox-group v-model="datePicked._2M">    
-                        <el-checkbox-button label=31 disabled  class="w-10" ></el-checkbox-button> 
-                        <el-checkbox-button label=01    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=02    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button> 
-                        <el-checkbox-button label=03    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=04    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=05    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=06    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
+                        <el-checkbox-button label=31 disabled   ></el-checkbox-button> 
+                        <el-checkbox-button label=01    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=02    @change="transDay_Mdf1(2)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=03    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=04    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=05    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=06    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox-button label=07    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=08    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=09    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button> 
-                        <el-checkbox-button label=10    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=11    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=12    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=13    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
+                        <el-checkbox-button label=07    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=08    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=09    @change="transDay_Mdf1(2)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=10    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=11    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=12    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=13    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox-button label=14    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=15    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=16    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button> 
-                        <el-checkbox-button label=17    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=18    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=19    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=20    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
+                        <el-checkbox-button label=14    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=15    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=16    @change="transDay_Mdf1(2)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=17    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=18    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=19    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=20    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox-button label=21    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=22    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=23    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button> 
-                        <el-checkbox-button label=24    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=25    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=26    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=27    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>
-                        <el-checkbox-button label=28    @change="transDay_Mdf1(2)" class="w-10" ></el-checkbox-button>  
+                        <el-checkbox-button label=21    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=22    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=23    @change="transDay_Mdf1(2)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=24    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=25    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=26    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=27    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                         <br>
+                        <el-checkbox-button label=28    @change="transDay_Mdf1(2)"  ></el-checkbox-button>  
                        
                     </el-checkbox-group>
                 </el-tab-pane>
                 <el-tab-pane label="3月" name="third">
                     <el-checkbox-group v-model="datePicked._3M">  
-                        <el-checkbox label=00 disabled  ></el-checkbox>
-                        <el-checkbox label=00 disabled  ></el-checkbox>  
-                        <el-checkbox label=01    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=02    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=03    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=04    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=05    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=06    @change="transDay" ></el-checkbox>
+                        <el-checkbox-button label=00 disabled @change="transDay_Mdf1(3)"  ></el-checkbox-button>  
+                        <el-checkbox-button label=01     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=02     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=03     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=04     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=05     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=06     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=07    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=08    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=09    @change="transDay" ></el-checkbox> 
-                        <el-checkbox label=10    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=11    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=12    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=13    @change="transDay" ></el-checkbox>
+                        <el-checkbox-button label=07     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=08     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=09     @change="transDay_Mdf1(3)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=10     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=11     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=12     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=13     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=14    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=15    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=16    @change="transDay" ></el-checkbox> 
-                        <el-checkbox label=17    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=18    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=19    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=20    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=21    @change="transDay" ></el-checkbox>
+                        <el-checkbox-button label=14     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=15     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=16     @change="transDay_Mdf1(3)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=17     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=18     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=19     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=20     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=22    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=23    @change="transDay" ></el-checkbox> 
-                        <el-checkbox label=24    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=25    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=26    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=27    @change="transDay" ></el-checkbox>
+                        <el-checkbox-button label=21     @change="transDay_Mdf1(3)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=22     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=23     @change="transDay_Mdf1(3)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=24     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=25     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=26     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=27     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=28    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=29    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=30    @change="transDay" ></el-checkbox> 
-                        <el-checkbox label=31    @change="transDay" ></el-checkbox>
+                        <el-checkbox-button label=28     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=29     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
+                        <el-checkbox-button label=30     @change="transDay_Mdf1(3)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=31     @change="transDay_Mdf1(3)"  ></el-checkbox-button>
                     </el-checkbox-group>
                 </el-tab-pane>
                 <el-tab-pane label="4月" name="fourth">
-                  <br>
-                        <el-checkbox-button label=28    @change="transDay" ></el-checkbox-button>
-                        <el-checkbox-button label=29    @change="transDay" ></el-checkbox-button>
-                        <el-checkbox-button label=30    @change="transDay" ></el-checkbox-button> 
-                        <el-checkbox-button label=31    @change="transDay" ></el-checkbox-button>
+                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
+                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
+                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
+                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
+                        <el-checkbox-button label=01     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=02     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=03     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=04     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=05     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=06     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <br>
-                    <el-checkbox-group v-model="checkboxGroup1">
-                        <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-                    </el-checkbox-group>
-                   
-
-
-                    <!-- <el-checkbox-group v-model="datePicked._4M">  
-                        <el-checkbox label=00 disabled @change="transDay" ></el-checkbox>
-                        <el-checkbox label=00 disabled @change="transDay" ></el-checkbox>
-                        <el-checkbox label=00 disabled @change="transDay" ></el-checkbox>
-                        <el-checkbox label=00 disabled @change="transDay" ></el-checkbox>  
-                        <el-checkbox label=01    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=02    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=03    @change="transDay" ></el-checkbox>
+                        <el-checkbox-button label=07     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=08     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=09     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=10     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=11     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=12     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=13     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=04    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=05    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=06    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=07    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=08    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=09    @change="transDay" ></el-checkbox> 
-                        <el-checkbox label=10    @change="transDay" ></el-checkbox>
+                        <el-checkbox-button label=14     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=15     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=16     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=17     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=18     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=19     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=20     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=11    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=12    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=13    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=14    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=15    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=16    @change="transDay" ></el-checkbox> 
-                        <el-checkbox label=17    @change="transDay" ></el-checkbox>
+                        <el-checkbox-button label=21     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=22     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=23     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=24     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=25     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=26     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=27     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=18    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=19    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=20    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=21    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=22    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=23    @change="transDay" ></el-checkbox> 
-                        <el-checkbox label=24    @change="transDay" ></el-checkbox>
-                        <br>
-                        <el-checkbox label=25    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=26    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=27    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=28    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=29    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=30    @change="transDay" ></el-checkbox>  
-                    </el-checkbox-group> -->
+                        <el-checkbox-button label=28     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=29     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=30     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=31     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                 </el-tab-pane>
             </el-tabs>
         </div>
@@ -351,9 +338,8 @@ export default {
         { 
             switch(M_Type) {
             case 1:
-                ReB_date = new Date('"2022-01-'+this.datePicked._1M[i].toString()+'"') ;
-                tempDay =day[ReB_date.getDay()].toString();
-                tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+tempDay+ " ..., ";
+                ReB_date = new Date('"2022-01-'+this.datePicked._1M[i].toString()+'"') ; 
+                tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+ "( )"  + " , ";
                 this.dispBkinfo._1M = tempString ;
                 // code block
                 break;
@@ -366,7 +352,7 @@ export default {
             case 3:
                 ReB_date = new Date('"2022-03-'+this.datePicked._3M[i].toString()+'"') ;
                 tempString = tempString + M_Type+"/"+this.datePicked._3M[i]+day[ReB_date.getDay()]  + " , ";
-                this.dispBkinfo._3M = tempString ;
+                this.dispBkinfo._3M = ReB_date ;
                 // code block
                 break;
             case 4:
