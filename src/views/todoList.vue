@@ -31,24 +31,26 @@
      
 <el-calendar>
   <!-- Use 2.5 slot syntax. If you use Vue 2.6, please use new slot syntax-->
-  <template
+  <template 
     slot="dateCell"
     slot-scope="{date, data}">
-    <p :class="data.isSelected ? 'is-selected' : ''">
+    <p 
+      class="text-xs text-gray-400"
+      :class="data.isSelected ? 'is-selected' : ''">
       {{ data.day.split('-').slice(1).join('/') }} {{ data.isSelected ? '✔️' : ''}}
  
     </p>
     
- <span v-if="data.day.split('-').slice(2) == 19"  > ss </span>
+ <!-- <span v-if="data.day.split('-').slice(2) == 19"  > ss </span> -->
 
 
 <div v-for="todo in todos"
             class="text-xs" > 
             
               <!-- {{ todo.creatTime.split('-').slice(2)  }} -->
-              {{ parseInt(todo.creatTime.split('-').slice(2))  }}
+              <!-- {{ parseInt(todo.creatTime.split('-').slice(2))  }} -->
                {{ data.day.split('-').slice(2) }} v.s {{ todo.creatTime.split('-').slice(2) }}
-<div v-if="parseInt(data.day.split('-').slice(2))  == parseInt(todo.creatTime.split('-').slice(2)) "  > Here ! {{ todo.text }} </div>
+<div v-if="parseInt(data.day.split('-').slice(2))  == parseInt(todo.creatTime.split('-').slice(2)) "  > 客戶： {{ todo.text }} </div>
    <!-- <div v-if="data.day.split('-').slice(2)  == todo.creatTime.split('-').slice(2) "  > Here ! {{ todo.text }} </div> -->
              
 
@@ -59,7 +61,7 @@
 </el-calendar>
 
 
-
+<!-- 
 <hr>  
 {{ todos[0].creatTime.slice(3, 2) }}
 
@@ -70,7 +72,7 @@
                
         </div> 
 ss::
-{{ v2 }}
+{{ v2 }} 
 
 
  <p>Component value：{{ v2 }}</p>
@@ -81,6 +83,7 @@ ss::
       end-placeholder="End date"
       :default-time="['00:00:00', '23:59:59']">
     </el-date-picker> 
+-->
 
 <!-- <el-date-picker
       v-model="v2"
@@ -92,9 +95,9 @@ ss::
       end-placeholder="End date"
       :picker-options="pickerOptions">
     </el-date-picker> -->
-    <hr>
+  
 <!-- {{ Daychker }} -->
-<hr>
+
 <div class="grid grid-cols-2 gap-1">
   <div>
     <form v-on:submit.prevent="addTodo">
@@ -104,13 +107,24 @@ ss::
            class="px-10 m-3 py-2 rounded-full bg-gray-100 "
            /> 
     <div class="block">
-      <span class="demonstration">Picker with quick options</span>
+
+ 
+  <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">Check all</el-checkbox>
+  <div style="margin: 15px 0;"></div>
+  <el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
+    <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+  </el-checkbox-group> 
+   
+
+      <span class="demonstration">HHs</span>
       <el-date-picker
         v-model="newTodo.creatTime"
         type="date"
         placeholder="Pick a day"
         :picker-options="pickerOptions">
       </el-date-picker>
+
+      
     </div>       
   </form> 
   </div> 
@@ -131,8 +145,26 @@ ss::
                     placeholder="Add new todo"
                     class="px-10 m-3 py-2 rounded-full bg-gray-100 focus:ring-2 focus:ring-blue-600 "  />  
 
+ <input type="text" 
+                    v-model="todo.name" 
+                    placeholder="Add new todo"
+                    class="px-10 m-3 py-2 rounded-full bg-gray-100 focus:ring-2 focus:ring-blue-600 "  />  
+{{ todo.pd_500 }}
+<el-input-number placeholder=":中瓶:" v-model="v2" @change="handleChange" :min="1" :max="10"></el-input-number>
+ <!-- <el-input-number placeholder=":大瓶:" v-model="todo.pd_950[1]" @change="handleChange" :min="1" :max="10"></el-input-number>
+ <el-input-number placeholder=":中瓶:" v-model="todo.pd_500[1]" @change="handleChange" :min="1" :max="10"></el-input-number> -->
+<!-- {{ todo.creatTime }} -->
 
-{{ todo.creatTime }}
+
+
+
+      <el-date-picker
+        v-model=" todo.creatTime"
+        type="date"
+        placeholder="Pick a day"
+        :picker-options="pickerOptions">
+      </el-date-picker>
+
             <button class="text-ms font-blod text-red-100 m-1 px-3 py-0.5 ml-4 rounded-full bg-red-400"
                   @click="removeTodo(todo.key)">刪除</button>
 
@@ -185,15 +217,21 @@ import { WordDataServiceEXP } from "../services/TodoService";
 // import {fb, db, datab} from '../firebase';
 // import TutorialDetails from "./WordMdf"; // 連接至 Mdf 的部分
 
+
+const cityOptions = ['大瓶', '中瓶', 'Guangzhou', 'Shenzhen'];
+
 export default {
   name: "tutorials-list",
   components: {   },
   data() {
     return {
 
-        // - - - - 
-      drawer: false,
-        direction: 'rtl',
+        // - - - -  
+
+         checkAll: false,
+        checkedCities: ['Shanghai', 'Beijing'],
+        cities: cityOptions,
+        isIndeterminate: true,
 
         // - - - - 
       showModal:false,
@@ -314,12 +352,14 @@ export default {
   },
   methods: { 
 
-    handleClose(done) {
-        this.$confirm('Are you sure you want to close this?')
-          .then(_ => {
-            done();
-          })
-          .catch(_ => {});
+    handleCheckAllChange(val) {
+        this.checkedCities = val ? cityOptions : [];
+        this.isIndeterminate = false;
+      },
+      handleCheckedCitiesChange(value) {
+        let checkedCount = value.length;
+        this.checkAll = checkedCount === this.cities.length;
+        this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
       },
     
 
@@ -402,6 +442,8 @@ export default {
             key: key, 
             text     : data.text, 
             creatTime: data.creatTime,
+            name: data.name,
+            pd_500: data.pd_500,
           });
         });
         this.todos = _tutorials; 

@@ -18,7 +18,12 @@ Vue.config.productionTip = false;
 
 
 
+
+
 // 阿順新增系列 
+
+import mDatePicker from 'vue-multi-date-picker'
+Vue.use(mDatePicker);
 // import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 // // Make BootstrapVue available throughout your project
 // import 'bootstrap/dist/css/bootstrap.css'

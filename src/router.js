@@ -50,11 +50,17 @@ const router =  new Router({
         // },
       ]
     },
+    // {
+    //   path: "/wordList",
+    //   name: "wordList",
+    //   component: () =>
+    //     import("./views/WordList.vue")
+    // },
     {
-      path: "/wordList",
-      name: "wordList",
+      path: "/copyMsg",
+      name: "copyMsg",
       component: () =>
-        import("./views/WordList.vue")
+        import("./views/copyMsg.vue")
     },
     {
       path: "/about",
@@ -129,7 +135,14 @@ const router =  new Router({
         component: () =>
           import("./views/UpLoadFile.vue")
       }, 
-    
+      {
+        path: "/DateList",
+        name: "DateList",
+        component: () =>
+          import("./views/DateList.vue")
+      },
+
+ 
     // {
     //   path: "/UpLoadFile",
     //   name: "UpLoadFile",

@@ -21,7 +21,13 @@
             <li class="nav-item">
               <router-link to="/todoList" class="nav-link">配送清單</router-link>
             </li> 
+            <li class="nav-item"> 
+              <router-link to="/DateList" class="nav-link">日期清單</router-link>
+            </li> 
 
+            <li class="nav-item"> 
+              <router-link to="/copyMsg" class="nav-link">可複製訊息</router-link>
+            </li> 
 
             <!-- <li class="nav-item">
               <router-link to="/imgList" class="nav-link">IMG-List</router-link>
