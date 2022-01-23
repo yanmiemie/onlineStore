@@ -57,6 +57,12 @@ const router =  new Router({
     //     import("./views/WordList.vue")
     // },
     {
+      path: "/",
+      name: "copyMsg",
+      component: () =>
+        import("./views/copyMsg.vue")
+    },
+    {
       path: "/copyMsg",
       name: "copyMsg",
       component: () =>
@@ -92,13 +98,7 @@ const router =  new Router({
     //   name: "todoList",
     //   component: () =>
     //     import("./views/todoList.vue")
-    // },
-    {
-      path: "/",
-      name: "todoList",
-      component: () =>
-        import("./views/todoList.vue")
-    },
+    // }, 
     {
       path: "/todoList",
       name: "todoList",

@@ -2,101 +2,98 @@
 <template>
   <div class="about"> 
     <Navbar></Navbar>  
-    <div class="m-20">
+    <div class="m-2">
       
       <div id="todo"> 
 
         <div class="grid grid-cols-2 gap-1">
-        <div> 
-            <h6>{{ dispBkinfo }}  </h6> 
-           
-        </div>
-        <div> 
+        
+        <!-- <div> 
              <button class="text-lg text-gray-100 m-3 px-3 py-0.5 ml-4 rounded-full bg-red-400"
             v-on:click="addTodo">新增</button>  
-        </div>
-        <div>
+        </div> -->
+        <h3> 請設定. 相關的日期 </h3> 
+        <div class="col-span-2" >
              <el-tabs v-model="activeName" @tab-click="handleClick">
                 <el-tab-pane label="1月" name="first">
                     <el-checkbox-group v-model="datePicked._1M"   >  
-                        <el-checkbox label=00 disabled ></el-checkbox>
-                        <el-checkbox label=00 disabled ></el-checkbox>
-                        <el-checkbox label=00 disabled ></el-checkbox>
-                        <el-checkbox label=00 disabled ></el-checkbox>
-                        <el-checkbox label=00 disabled ></el-checkbox> 
-                        <el-checkbox label=01   @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=02   @change="ttransDay_Mdf1(1)" ></el-checkbox>
+                        <el-checkbox-button label=26 disabled  ></el-checkbox-button>
+                        <el-checkbox-button label=27 disabled  ></el-checkbox-button>
+                        <el-checkbox-button label=28 disabled  ></el-checkbox-button>
+                        <el-checkbox-button label=29 disabled  ></el-checkbox-button>
+                        <el-checkbox-button label=31 disabled  ></el-checkbox-button> 
+                        <el-checkbox-button label=01    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=02    @change="transDay_Mdf1(1)" ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=03    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=04    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=05    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=06    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=07    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=08    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=09    @change="transDay_Mdf1(1)" ></el-checkbox>
+                        <el-checkbox-button label=03    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=04    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=05    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=06    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=07    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=08    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=09    @change="transDay_Mdf1(1)" ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=10    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=11    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=12    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=13    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=14    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=15    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=16    @change="transDay_Mdf1(1)" ></el-checkbox>
+                        <el-checkbox-button label=10    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=11    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=12    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=13    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=14    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=15    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=16    @change="transDay_Mdf1(1)" ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=17    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=18    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=19    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=20    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=21    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=22    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=23    @change="transDay_Mdf1(1)" ></el-checkbox>
+                        <el-checkbox-button label=17    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=18    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=19    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=20    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=21    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=22    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=23    @change="transDay_Mdf1(1)" ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=24    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=25    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=26    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=27    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=28    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=29    @change="transDay_Mdf1(1)" ></el-checkbox>
-                        <el-checkbox label=30    @change="transDay_Mdf1(1)" ></el-checkbox>
+                        <el-checkbox-button label=24    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=25    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=26    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=27    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=28    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=29    @change="transDay_Mdf1(1)" ></el-checkbox-button>
+                        <el-checkbox-button label=30    @change="transDay_Mdf1(1)" ></el-checkbox-button>
                         <br> 
-                        <el-checkbox label=31    @change="transDay_Mdf1(1)" ></el-checkbox>
+                        <el-checkbox-button label=31    @change="transDay_Mdf1(1)" ></el-checkbox-button>
                     </el-checkbox-group> 
                 </el-tab-pane>
                 <el-tab-pane label="2月" name="second">
-                    <el-checkbox-group v-model="datePicked._2M">  
-                        <el-checkbox label=00 disabled  ></el-checkbox> 
-                        <el-checkbox label=01    @change="transDay_Mdf1(2)" ></el-checkbox>
-                        <el-checkbox label=02    @change="transDay_Mdf1(2)" ></el-checkbox> 
-                        <el-checkbox label=03    @change="transDay_Mdf1(2)" ></el-checkbox>
-                        <el-checkbox label=04    @change="transDay_Mdf1(2)" ></el-checkbox>
-                        <el-checkbox label=05    @change="transDay_Mdf1(2)" ></el-checkbox>
-                        <el-checkbox label=06    @change="transDay_Mdf1(2)" ></el-checkbox>
+                    <el-checkbox-group v-model="datePicked._2M">    
+                        <el-checkbox-button label=31 disabled  ></el-checkbox-button> 
+                        <el-checkbox-button label=01    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=02    @change="transDay_Mdf1(2)" ></el-checkbox-button> 
+                        <el-checkbox-button label=03    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=04    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=05    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=06    @change="transDay_Mdf1(2)" ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=07    @change="transDay_Mdf1(2)" ></el-checkbox>
-                        <el-checkbox label=08    @change="transDay_Mdf1(2)" ></el-checkbox>
-                        <el-checkbox label=09    @change="transDay_Mdf1(2)" ></el-checkbox>
-                        <el-checkbox label=10    @change="transDay_Mdf1(2)" ></el-checkbox>
-                        <el-checkbox label=11    @change="transDay_Mdf1(2)" ></el-checkbox>
-                        <el-checkbox label=12    @change="transDay_Mdf1(2)" ></el-checkbox>
-                        <el-checkbox label=13    @change="transDay_Mdf1(2)" ></el-checkbox>
+                        <el-checkbox-button label=07    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=08    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=09    @change="transDay_Mdf1(2)" ></el-checkbox-button> 
+                        <el-checkbox-button label=10    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=11    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=12    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=13    @change="transDay_Mdf1(2)" ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=14    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=15    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=16    @change="transDay" ></el-checkbox> 
-                        <el-checkbox label=17    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=18    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=19    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=20    @change="transDay" ></el-checkbox>
+                        <el-checkbox-button label=14    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=15    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=16    @change="transDay_Mdf1(2)" ></el-checkbox-button> 
+                        <el-checkbox-button label=17    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=18    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=19    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=20    @change="transDay_Mdf1(2)" ></el-checkbox-button>
                         <br>
-                        <el-checkbox label=21    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=22    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=23    @change="transDay" ></el-checkbox> 
-                        <el-checkbox label=24    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=25    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=26    @change="transDay" ></el-checkbox>
-                        <el-checkbox label=27    @change="transDay" ></el-checkbox>
-                        <br>
-                        <el-checkbox label=28    @change="transDay" ></el-checkbox>
+                        <el-checkbox-button label=21    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=22    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=23    @change="transDay_Mdf1(2)" ></el-checkbox-button> 
+                        <el-checkbox-button label=24    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=25    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=26    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=27    @change="transDay_Mdf1(2)" ></el-checkbox-button>
+                        <el-checkbox-button label=28    @change="transDay_Mdf1(2)" ></el-checkbox-button>  
                        
                     </el-checkbox-group>
                 </el-tab-pane>
@@ -142,7 +139,19 @@
                     </el-checkbox-group>
                 </el-tab-pane>
                 <el-tab-pane label="4月" name="fourth">
-                    <el-checkbox-group v-model="datePicked._4M">  
+                  <br>
+                        <el-checkbox-button label=28    @change="transDay" ></el-checkbox-button>
+                        <el-checkbox-button label=29    @change="transDay" ></el-checkbox-button>
+                        <el-checkbox-button label=30    @change="transDay" ></el-checkbox-button> 
+                        <el-checkbox-button label=31    @change="transDay" ></el-checkbox-button>
+                        <br>
+                    <el-checkbox-group v-model="checkboxGroup1">
+                        <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
+                    </el-checkbox-group>
+                   
+
+
+                    <!-- <el-checkbox-group v-model="datePicked._4M">  
                         <el-checkbox label=00 disabled @change="transDay" ></el-checkbox>
                         <el-checkbox label=00 disabled @change="transDay" ></el-checkbox>
                         <el-checkbox label=00 disabled @change="transDay" ></el-checkbox>
@@ -181,165 +190,25 @@
                         <el-checkbox label=28    @change="transDay" ></el-checkbox>
                         <el-checkbox label=29    @change="transDay" ></el-checkbox>
                         <el-checkbox label=30    @change="transDay" ></el-checkbox>  
-                    </el-checkbox-group>
+                    </el-checkbox-group> -->
                 </el-tab-pane>
             </el-tabs>
         </div>
+        
         </div> 
-          <el-checkbox-group v-model="newTodo.CRMway">
-            <el-checkbox label="官方Line"    ></el-checkbox>
-            <el-checkbox label="小寶的Line"  ></el-checkbox>
-            <el-checkbox label="小妹的Line"  ></el-checkbox>
-            <el-checkbox label="大哥的Line"  ></el-checkbox>
-            <el-checkbox label="Fb"         ></el-checkbox>
-            <el-checkbox label="IG"         ></el-checkbox>
-            <el-checkbox label="手機號碼"    ></el-checkbox>
-            <el-checkbox label="聯繫管道"    ></el-checkbox> 
-          </el-checkbox-group>
-
- <el-checkbox v-model="checked">Option</el-checkbox>
- 
-                    <input type="text" 
-                                    v-model="newTodo.name" 
-                                    placeholder="顧客姓名"
-                                    class="px-10 m-3 py-2 rounded-full bg-gray-100 "
-                                    /> 
-                    <input type="text" 
-                                    v-model="newTodo.phone" 
-                                    placeholder="顧客電話"
-                                    class="px-10 m-3 py-2 rounded-full bg-gray-100 "
-                                    /> 
-                    <input type="text" 
-                                    v-model="newTodo.ads" 
-                                    placeholder="顧客地址"
-                                    class="px-10 m-3 py-2 rounded-full bg-gray-100 "
-                                    /> 
-
-
-                                          <div class="flex border-1">
-                          <div class="flex-1 text-center text-lx py-5">
-                            <a>{{ 1 }}</a>
-                          </div>  
-                          <div class="flex-1 text-gray-700 text-center bg-gray-200 px-4 py-2 m-2">
-                            <el-date-picker
-                              v-model="newTodo.dateNote[1]"
-                              type="date"
-                              placeholder="Pick a day"
-                              :picker-options="pickerOptions"
-                              value-format="yyyy-MM-dd">
-                            </el-date-picker>
-                          </div>
-                          <div class="flex-1 text-gray-700 text-center bg-gray-200 px-4 py-2 m-2">
-                              <el-input-number placeholder=":大瓶:" v-model="newTodo.pd_950[1]" @change="handleChange" :min="1" :max="10"></el-input-number>
-                              <el-input-number placeholder=":中瓶:" v-model="newTodo.pd_500[1]" @change="handleChange" :min="1" :max="10"></el-input-number>
-                              <!-- <el-input-number v-model="newTodo.pd_250[item]" @change="handleChange" :min="1" :max="10"></el-input-number> -->
-                          </div> 
-                        </div>    
-
-
-
-   
-      <div class="grid grid-cols-2 gap-1">
-        <div>
-             {{ datePicked }}
-        </div>
-       <hr>
         <div> 
-          {{ newTodo }}
+            <h6>{{ dispBkinfo }}  </h6> 
+            <hr>
+           <h6> {{this.dispBkinfo.transOUTPUT}}</h6> 
+        </div>
+          
 
-          {{ v }}
-          <form v-on:submit.prevent="addTodo">  
-            <!-- <m-date-picker v-model="newTodo.dateNote" 
-                      :multi="multi" 
-                      :always-display="false" 
-                      ></m-date-picker> -->
+
+
  
-
-                      
-
-                    <!-- <el-date-picker
-                      v-model="newTodo.dateNote[0]"
-                      type="date"
-                      placeholder="Pick a day"
-                      :picker-options="pickerOptions"
-                      value-format="yyyy-MM-dd">
-                    </el-date-picker>
-
-                          <el-date-picker
-                      v-model="newTodo.dateNote[1]"
-                      type="date"
-                      placeholder="Pick a day"
-                      :picker-options="pickerOptions"
-                      value-format="yyyy-MM-dd">
-                    </el-date-picker>
-
-                          <el-date-picker
-                      v-model="newTodo.dateNote[2]"
-                      type="date"
-                      placeholder="Pick a day"
-                      :picker-options="pickerOptions"
-                      value-format="yyyy-MM-dd">
-                    </el-date-picker>
-
-                          <el-date-picker
-                      v-model="newTodo.dateNote[3]"
-                      type="date"
-                      placeholder="Pick a day"
-                      :picker-options="pickerOptions"
-                      value-format="yyyy-MM-dd">
-                    </el-date-picker> -->
-
-            <div class="block"> 
-                <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">Check all</el-checkbox>
-                <div style="margin: 15px 0;"></div>
-                <el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
-                  <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
-                </el-checkbox-group>   
-            </div>   
-          </form> 
-
-        </div> 
-      <div>
-
-    <button class="text-lg text-gray-100 m-3 px-3 py-0.5 ml-4 rounded-full bg-red-400"
-            v-on:click="addTodo">新增</button>    
-  </div>
-</div> 
  
-<hr>
-{{ g }}
-
-{{ todo }} 
-      <ul class="todo-list  ">
-        <li v-for="todo in todos"
-            class="border-2 border-gray-200 rounded-full py-1 px-4 my-2" > 
-            <input type="text" 
-                    v-model="todo.text" 
-                    placeholder="Add new todo"
-                    class="px-10 m-3 py-2 rounded-full bg-gray-100 focus:ring-2 focus:ring-blue-600 "  />  
-
-
-<!-- {{ todo.creatTime }} -->
-
-
-
-
-      <el-date-picker
-        v-model=" todo.creatTime"
-        type="date"
-        placeholder="Pick a day"
-        :picker-options="pickerOptions">
-      </el-date-picker>
-
-            <button class="text-ms font-blod text-red-100 m-1 px-3 py-0.5 ml-4 rounded-full bg-red-400"
-                  @click="removeTodo(todo.key)">刪除</button>
-
-            <button class="bg-green-500 text-gray-900  text-ms font-blod 
-                          m-1 px-3 py-0.5 ml-4 rounded-full 
-                          hover:bg-green-700 hover:text-gray-100  "
-                  @click="updateTodo(todo.key,todo)">更新</button>   
-        </li> 
-      </ul> 
+ 
+  
 
 
     </div> 
@@ -453,10 +322,16 @@ export default {
         let ReB_date;
         let day = ['(日)','(一)','(二)','(三)','(四)','(五)','(六)'];
 
-this.dispBkinfo._3M="CODE---> 第一階段"
+// this.dispBkinfo._3M="CODE---> 第一階段"
 
-let tempString=">> Here >>";
+let tempString="";
 let get_M_CNT=1;
+
+// NT_01+NT_02+NT_03+
+let NT_01 ="" ;
+let NT_02 ="" ;
+let NT_03 ="" ;
+let NT_04 ="" ;
 // get_M_CNT
 
 switch(M_Type) {
@@ -480,38 +355,54 @@ switch(M_Type) {
     // code block
 }
 
-this.dispBkinfo._3M="CODE---> 第二階段:get_M_CNT="+ get_M_CNT;
+// this.dispBkinfo._3M="CODE---> 第二階段:get_M_CNT="+ get_M_CNT;
 // tempString = tempString +'|'+ i; 
 
 for (let i = 0; i < get_M_CNT; i++) 
 { 
     switch(M_Type) {
-                    case 1:
-                        ReB_date = new Date('"2022-01-'+this.datePicked._1M[i]+'"') ;
-                        // code block
-                        break;
-                    case 2:
-                        ReB_date = new Date('"2022-02-'+this.datePicked._2M[i]+'"') ;
-                        // code block
-                        break;
-                    case 3:
-                        ReB_date = new Date('"2022-03-'+this.datePicked._3M[i]+'"') ;
-                        // code block
-                        break;
-                    case 4:
-                        ReB_date = new Date('"2022-04-'+this.datePicked._4M[i]+'"') ;
-                        // code block
-                        break;    
-                    default:
-                        // code block
-                    }  
-                    this.dispBkinfo._3M="CODE---> 第三階段:i = "+ i;
-            tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+day[ReB_date.getDay()]  + " , ";
-this.dispBkinfo._3M="CODE---> 第四階段:tempString = "+  tempString;
+    case 1:
+        ReB_date = new Date('"2022-01-'+this.datePicked._1M[i]+'"') ;
+        tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+day[ReB_date.getDay()]  + " , ";
+        this.dispBkinfo._1M = tempString ;
+        // code block
+        break;
+    case 2:
+        ReB_date = new Date('"2022-02-'+this.datePicked._2M[i]+'"') ;
+        tempString = tempString + M_Type+"/"+this.datePicked._2M[i]+day[ReB_date.getDay()]  + " , ";
+        this.dispBkinfo._2M = tempString ;
+        // code block
+        break;
+    case 3:
+        ReB_date = new Date('"2022-03-'+this.datePicked._3M[i]+'"') ;
+        tempString = tempString + M_Type+"/"+this.datePicked._3M[i]+day[ReB_date.getDay()]  + " , ";
+        this.dispBkinfo._3M = tempString ;
+        // code block
+        break;
+    case 4:
+        ReB_date = new Date('"2022-04-'+this.datePicked._4M[i]+'"') ;
+        tempString = tempString + M_Type+"/"+this.datePicked._4M[i]+day[ReB_date.getDay()]  + " , ";
+        this.dispBkinfo._4M = tempString ; 
+        // code block
+        break;    
+    default:
+        // code block
+    }  
+
+    // tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+day[ReB_date.getDay()]  + " , ";
+ 
+
+    // this.dispBkinfo._3M = tempString ;
+
+    // tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+day[ReB_date.getDay()]  + " , ";
+    // this.dispBkinfo._3M="CODE---> 第四階段:tempString = "+  tempString; 
+
+                    
     // this.dispBkinfo.transOUTPUT =  M_Type+"/"+this.datePicked._1M[0]+day[ReB_date.getDay()];
 }
+// this.dispBkinfo.transOUTPUT = NT_01+NT_02+NT_03+NT_04; // 結合四個月 的註記。
 
-this.dispBkinfo.transOUTPUT = tempString;
+this.dispBkinfo.transOUTPUT = "即將為您安排在以下幾日: "+this.dispBkinfo._1M+this.dispBkinfo._2M+this.dispBkinfo._3M+this.dispBkinfo._4M;
 // this.dispBkinfo._1M = tempString;
 
 
@@ -519,7 +410,7 @@ this.dispBkinfo.transOUTPUT = tempString;
         // this.dispBkinfo.transOUTPUT = ReB_date.getDay();
 
         // - - - - - 
-          this.dispBkinfo.transOUTPUT =  M_Type+"/"+this.datePicked._1M[0]+day[ReB_date.getDay()];
+        //   this.dispBkinfo.transOUTPUT =  M_Type+"/"+this.datePicked._1M[0]+day[ReB_date.getDay()];
         // - - - - - 
 
         //   const date1 = birthday.getDate();
