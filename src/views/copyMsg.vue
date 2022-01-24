@@ -12,7 +12,7 @@
              <button class="text-lg text-gray-100 m-3 px-3 py-0.5 ml-4 rounded-full bg-red-400"
             v-on:click="addTodo">新增</button>  
         </div> -->
-        <h3> 請設定. 相關的日期 </h3> 
+        <h3> 請設定 </h3> 
         <div class="col-span-2" >
              <el-tabs v-model="activeName" @tab-click="handleClick">
                 <el-tab-pane label="1月" name="first">
