@@ -188,16 +188,7 @@
             <hr>
            <h6> {{this.dispBkinfo.transOUTPUT}}</h6> 
         </div>
-          
-
-
-
- 
- 
- 
-  
-
-
+           
     </div> 
     </div>  
    </div>
@@ -346,7 +337,7 @@ export default {
             case 2:
                 ReB_date = new Date('"2022-02-'+this.datePicked._2M[i].toString()+'"') ;
                 tempString = tempString + M_Type+"/"+this.datePicked._2M[i]+day[ReB_date.getDay()]  + " , ";
-                this.dispBkinfo._2M = tempString ;
+                this.dispBkinfo._2M = tempString +";;"+ dayjs(ReB_date).format('YYYY-MM-DD')  ;
                 // code block
                 break;
             case 3:
