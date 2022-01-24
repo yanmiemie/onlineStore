@@ -139,45 +139,46 @@
                     </el-checkbox-group>
                 </el-tab-pane>
                 <el-tab-pane label="4月" name="fourth">
-                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
-                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
-                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
-                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
+                    <el-checkbox-group v-model="datePicked._4M">  
+                        <el-checkbox-button label=00 disabled @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=00 disabled @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=00 disabled @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=00 disabled @change="transDay_Mdf1(4)"  ></el-checkbox-button>  
                         <el-checkbox-button label=01     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=02     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=03     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <br>
                         <el-checkbox-button label=04     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=05     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=06     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <br>
+                        <el-checkbox-button label=06     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
                         <el-checkbox-button label=07     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=08     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=09     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=09     @change="transDay_Mdf1(4)"  ></el-checkbox-button>  
                         <el-checkbox-button label=10     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <br>
                         <el-checkbox-button label=11     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=12     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=13     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <br>
+                        <el-checkbox-button label=13     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
                         <el-checkbox-button label=14     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=15     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=16     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
                         <el-checkbox-button label=17     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <br>
                         <el-checkbox-button label=18     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=19     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=20     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <br>
                         <el-checkbox-button label=21     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
                         <el-checkbox-button label=22     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=23     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
                         <el-checkbox-button label=24     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <br>
                         <el-checkbox-button label=25     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=26     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=27     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <br>
+                        <el-checkbox-button label=27     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
                         <el-checkbox-button label=28     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=29     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=30     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
-                        <el-checkbox-button label=31     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <el-checkbox-button label=30     @change="transDay_Mdf1(4)"  ></el-checkbox-button>  
+                    </el-checkbox-group>
                 </el-tab-pane>
             </el-tabs>
         </div>
@@ -368,8 +369,33 @@ export default {
                 break;
             case 4:
                 ReB_date = new Date('"2022-04-'+this.datePicked._4M[i].toString()+'"') ;
-                tempString = tempString + M_Type+"/"+this.datePicked._4M[i]+day[ReB_date.getDay()]  + " , ";
-                this.dispBkinfo._4M = tempString ; 
+                tempString =  '2022/04/'+ this.datePicked._4M[i]+' 00:00:00';
+
+            // const _TT = new Date("'"+tempString+"'");
+this.dispBkinfo._4M = tempString ;
+                var _TT = dayjs('2019-01-25').toISOString();
+
+                const ddd = new Date(_TT);
+// const day1 = ddd.getDay();
+
+var _TAT =ddd.getDay();
+                this.dispBkinfo._4M = tempString  +"=== "+ _TT +"=== "+ _TAT;
+                //  tempString =  '2022/04'+"/"+this.datePicked._4M[i]+day[ReB_date.getDay()]  + " , ";
+                // tempString = tempString + '04'+"/"+this.datePicked._4M[i]+day[ReB_date.getDay()]  + " , ";
+                
+                // this.dispBkinfo._4M = tempString + _TT.getDay();
+                
+                let omTime =this.transformTime(_TT)
+
+
+// this.dispBkinfo._4M = tempString + _TT.getDay() + 'omTime = ' + omTime;
+                // var _YYYY = 2022;
+                // var _MM = 4;
+                // var _DD = this.datePicked._4M[i].toString();
+                // var _T = "'"+_YYYY.toString()+"/"+_MM.toString()+"/"+_DD.toString()+" 00:00:00'"
+                // reB_Temp = new Date(_T.toString());
+                
+                // this.dispBkinfo._4M = _T +"<<<" +_T.getDay() +">>>"; 
                 // code block
                 break;    
             default:
