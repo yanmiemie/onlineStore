@@ -350,11 +350,16 @@ export default {
                
                break;
             case 3:
-                ReB_date = new Date('"2022-03-'+this.datePicked._3M[i].toString()+'"')  ;
-
-                // var time = ReB_date.replace(/-g/,':').replace(' ',':');
-                time =  ReB_date.split('-');
-                var time1 = new Date(time[0],time[1]-1,time[2])
+ 
+            // const validDate = new Date(2021, 1, 1)
+            // const invalidDate = new Date('abc')
+            // console.log(isValidDate(validDate))
+                ReB_date = new Date(2022,M_Type,this.datePicked._3M[i].toString()) ;
+                tempString = tempString + M_Type+"/"+this.datePicked._3M[i]  + " , ";
+                // this.dispBkinfo._2M = tempString +"??"+ dayjs(ReB_date).format('YYYY/MM/DD').toString()  ;
+                // code block
+                this.dispBkinfo._3M = tempString + "KKK"+ day[ReB_date.getDay()]+"LLL"+ dayjs(ReB_date).format('ddd').toString()  ;
+                // this.dispBkinfo._3M = tempString +this.datePicked.dayjs().format('L LT').toString();
 
                 // tempString = tempString + M_Type+"/"+this.datePicked._3M[i]+day[ReB_date.getDay()]  + " , ";
                 // this.dispBkinfo._3M = time1 + "【"+time1.getDay()+ "】";
