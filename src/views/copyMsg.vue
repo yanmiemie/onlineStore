@@ -12,7 +12,7 @@
              <button class="text-lg text-gray-100 m-3 px-3 py-0.5 ml-4 rounded-full bg-red-400"
             v-on:click="addTodo">新增</button>  
         </div> -->
-        <h3> 請設定 </h3> 
+        <h3> 請設定. 相關的日期 </h3> 
         <div class="col-span-2" >
              <el-tabs v-model="activeName" @tab-click="handleClick">
                 <el-tab-pane label="1月" name="first">
@@ -139,46 +139,45 @@
                     </el-checkbox-group>
                 </el-tab-pane>
                 <el-tab-pane label="4月" name="fourth">
-                    <el-checkbox-group v-model="datePicked._4M">  
-                        <el-checkbox-button label=00 disabled @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=00 disabled @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=00 disabled @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=00 disabled @change="transDay_Mdf1(4)"  ></el-checkbox-button>  
+                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
+                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
+                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
+                        <el-checkbox-button label=00 disabled  ></el-checkbox-button>  
                         <el-checkbox-button label=01     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=02     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=03     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <br>
                         <el-checkbox-button label=04     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=05     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=06     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=06     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <br>
                         <el-checkbox-button label=07     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=08     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=09     @change="transDay_Mdf1(4)"  ></el-checkbox-button>  
+                        <el-checkbox-button label=09     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
                         <el-checkbox-button label=10     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <br>
                         <el-checkbox-button label=11     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=12     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=13     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=13     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <br>
                         <el-checkbox-button label=14     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=15     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=16     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
                         <el-checkbox-button label=17     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <br>
                         <el-checkbox-button label=18     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=19     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=20     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <br>
                         <el-checkbox-button label=21     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
                         <el-checkbox-button label=22     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=23     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
                         <el-checkbox-button label=24     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <br>
                         <el-checkbox-button label=25     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=26     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=27     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=27     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
+                        <br>
                         <el-checkbox-button label=28     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                         <el-checkbox-button label=29     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
-                        <el-checkbox-button label=30     @change="transDay_Mdf1(4)"  ></el-checkbox-button>  
-                    </el-checkbox-group>
+                        <el-checkbox-button label=30     @change="transDay_Mdf1(4)"  ></el-checkbox-button> 
+                        <el-checkbox-button label=31     @change="transDay_Mdf1(4)"  ></el-checkbox-button>
                 </el-tab-pane>
             </el-tabs>
         </div>
@@ -300,7 +299,10 @@ export default {
 
         let ReB_date;
         let day = ['(日)','(一)','(二)','(三)','(四)','(五)','(六)'];
+        let week_Sno_ISO = ['(.日)','(.一)','(.二)','(.三)','(.四)','(.五)','(.六)'];
         let tempDay="";
+        let tempS="";
+        
         let tempString="";
         let get_M_CNT=1;
 
@@ -330,72 +332,63 @@ export default {
         { 
             switch(M_Type) {
             case 1:
+                
+                
                 ReB_date = new Date('"2022-01-'+this.datePicked._1M[i].toString()+'"') ; 
-                tempString = tempString + M_Type+"/"+this.datePicked._1M[i]+ "( )"  + " , ";
-                // this.dispBkinfo._M = tempString ;
-                var t2 = dayjs(ReB_date).format('YYYY-MM-DD').toString()  ;
-                var time =  t2.split('-');
-                var time1 = new Date(time[0]+time[1]-1,time[2]);
-                this.dispBkinfo._1M = time[0] +"/" +time[1] +"/"+time[2] +"(" + ReB_date.getDay();
-                // this.dispBkinfo._1M= ReB_date;
-                // this.dispBkinfo._1M=time;
+                
+                tempS  =  M_Type+"/"+ this.datePicked._1M[i] ;
+                tempString =  '2022-04-'+ this.datePicked._1M[i]+'T01:00:00.000Z';
+                // const ddd = new Date(tempS );
+                var _TAT =ddd.getDay();
+
+                tempS =  tempS + M_Type+"/"+ this.datePicked._1M[i] +week_Sno_ISO[_TAT]  + " , ";
+
+
+
+
+                this.dispBkinfo._1M = tempS ;
                 // code block
+
+                
+                
+                // ReB_date = new Date('"2022-04-'+this.datePicked._4M[i].toString()+'"') ;
+                // tempString =  '2022-04-'+ this.datePicked._4M[i]+'T01:00:00.000Z';
+                // const ddd = new Date(tempString);
+                  
+                // temp_S =  M_Type+"/"+this.datePicked._4M[i]   
+                // his.dispBkinfo._4M = tempString ;
+                // var temp_S = this.datePicked._4M[i];
+                
+
+
+                // var temp_T = temp_S + week_Sno_ISO[_TAT] + " , ";
+
+                // this.dispBkinfo._4M = this.dispBkinfo._4M +   temp_T   ;
                 break;
             case 2:
-                ReB_date = new Date('"2022/02/'+this.datePicked._2M[i].toString()+'"') ;
-                tempString = tempString + M_Type+"/"+this.datePicked._2M[i]+day[ReB_date.getDay()]  + " , ";
-                this.dispBkinfo._2M = tempString +"??"+ dayjs(ReB_date).format('YYYY/MM/DD').toString()  ;
-                // code block
-                this.dispBkinfo._3M = "KKK"+ dayjs(ReB_date).format('ddd').toString()  ;
-                // this.dispBkinfo._3M = tempString +this.datePicked.dayjs().format('L LT').toString();
-               
-               break;
-            case 3:
- 
-            // const validDate = new Date(2021, 1, 1)
-            // const invalidDate = new Date('abc')
-            // console.log(isValidDate(validDate))
-                ReB_date = new Date(2022,M_Type,this.datePicked._3M[i].toString()) ;
-                tempString = tempString + M_Type+"/"+this.datePicked._3M[i]  + " , ";
-                // this.dispBkinfo._2M = tempString +"??"+ dayjs(ReB_date).format('YYYY/MM/DD').toString()  ;
-                // code block
-                this.dispBkinfo._3M = tempString + "KKK"+ day[ReB_date.getDay()]+"LLL"+ dayjs(ReB_date).format('ddd').toString()  ;
-                // this.dispBkinfo._3M = tempString +this.datePicked.dayjs().format('L LT').toString();
+                ReB_date = new Date('"2022-02-'+this.datePicked._2M[i].toString()+'"') ;
+                
+                // - - - 
 
-                // tempString = tempString + M_Type+"/"+this.datePicked._3M[i]+day[ReB_date.getDay()]  + " , ";
-                // this.dispBkinfo._3M = time1 + "【"+time1.getDay()+ "】";
-                // this.dispBkinfo._3M= ReB_date;
+                // tempString =  '2022-02-'+ this.datePicked._2M[i]+'T01:00:00.000Z';
+                const ddd = new Date('2022-02-'+ this.datePicked._2M[i]+'T01:00:00.000Z' );
+                var _TAT =ddd.getDay();
+                // - - - 
+                
+                tempString = tempString + M_Type+"/"+this.datePicked._2M[i]+week_Sno_ISO[_TAT]  + " , ";
+                this.dispBkinfo._2M = tempString  ;
+                // code block
+                break;
+            case 3:
+                ReB_date = new Date('"2022-03-'+this.datePicked._3M[i].toString()+'"')  ;
+                tempString = tempString + M_Type+"/"+this.datePicked._3M[i]+day[ReB_date.getDay()]  + " , ";
+                this.dispBkinfo._3M = ReB_date ;
                 // code block
                 break;
             case 4:
                 ReB_date = new Date('"2022-04-'+this.datePicked._4M[i].toString()+'"') ;
-                tempString =  '2022/04/'+ this.datePicked._4M[i]+' 00:00:00';
-
-            // const _TT = new Date("'"+tempString+"'");
-this.dispBkinfo._4M = tempString ;
-                var _TT = dayjs('2019-01-25').toISOString();
-
-                const ddd = new Date(_TT);
-// const day1 = ddd.getDay();
-
-var _TAT =ddd.getDay();
-                this.dispBkinfo._4M = tempString  +"=== "+ _TT +"=== "+ _TAT;
-                //  tempString =  '2022/04'+"/"+this.datePicked._4M[i]+day[ReB_date.getDay()]  + " , ";
-                // tempString = tempString + '04'+"/"+this.datePicked._4M[i]+day[ReB_date.getDay()]  + " , ";
-                
-                // this.dispBkinfo._4M = tempString + _TT.getDay();
-                
-                let omTime =this.transformTime(_TT)
-
-
-// this.dispBkinfo._4M = tempString + _TT.getDay() + 'omTime = ' + omTime;
-                // var _YYYY = 2022;
-                // var _MM = 4;
-                // var _DD = this.datePicked._4M[i].toString();
-                // var _T = "'"+_YYYY.toString()+"/"+_MM.toString()+"/"+_DD.toString()+" 00:00:00'"
-                // reB_Temp = new Date(_T.toString());
-                
-                // this.dispBkinfo._4M = _T +"<<<" +_T.getDay() +">>>"; 
+                tempString = tempString + M_Type+"/"+this.datePicked._4M[i]+day[ReB_date.getDay()]  + " , ";
+                this.dispBkinfo._4M = tempString ; 
                 // code block
                 break;    
             default:
