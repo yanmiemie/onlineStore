@@ -345,7 +345,10 @@ export default {
                 tempString = tempString + M_Type+"/"+this.datePicked._2M[i]+day[ReB_date.getDay()]  + " , ";
                 this.dispBkinfo._2M = tempString +"??"+ dayjs(ReB_date).format('YYYY/MM/DD').toString()  ;
                 // code block
-                break;
+                this.dispBkinfo._3M = "KKK"+ dayjs(ReB_date).format('ddd').toString()  ;
+                // this.dispBkinfo._3M = tempString +this.datePicked.dayjs().format('L LT').toString();
+               
+               break;
             case 3:
                 ReB_date = new Date('"2022-03-'+this.datePicked._3M[i].toString()+'"')  ;
 
