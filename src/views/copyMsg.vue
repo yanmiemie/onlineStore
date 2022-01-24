@@ -298,7 +298,7 @@ export default {
  
 
         let ReB_date;
-        let Week_sNO = ['(日)','(一)','(二)','(三)','(四)','(五)','(六)'];
+        let day = ['(日)','(一)','(二)','(三)','(四)','(五)','(六)'];
         let tempDay="";
         let tempString="";
         let get_M_CNT=1;
@@ -334,16 +334,16 @@ export default {
                 // this.dispBkinfo._M = tempString ;
                 var t2 = dayjs(ReB_date).format('YYYY-MM-DD').toString()  ;
                 var time =  t2.split('-');
-                var time1 = new Date(time[0],time[1]-1,time[2]);
-                this.dispBkinfo._1M = time[0] +"/" +time[1] +"/"+time[2] +"(" + Week_sNO[time1.getDay()];
+                var time1 = new Date(time[0]+time[1]-1,time[2]);
+                this.dispBkinfo._1M = time[0] +"/" +time[1] +"/"+time[2] +"(" + ReB_date.getDay();
                 // this.dispBkinfo._1M= ReB_date;
                 // this.dispBkinfo._1M=time;
                 // code block
                 break;
             case 2:
-                ReB_date = new Date('"2022-02-'+this.datePicked._2M[i].toString()+'"') ;
+                ReB_date = new Date('"2022/02/'+this.datePicked._2M[i].toString()+'"') ;
                 tempString = tempString + M_Type+"/"+this.datePicked._2M[i]+day[ReB_date.getDay()]  + " , ";
-                this.dispBkinfo._2M = tempString +"??"+ dayjs(ReB_date).format('YYYY-MM-DD').toString()  ;
+                this.dispBkinfo._2M = tempString +"??"+ dayjs(ReB_date).format('YYYY/MM/DD').toString()  ;
                 // code block
                 break;
             case 3:
