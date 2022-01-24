@@ -63,7 +63,7 @@
                 <el-tab-pane label="2月" name="second">
                     <el-checkbox-group v-model="datePicked._2M">    
                         <el-checkbox-button label=31 disabled   ></el-checkbox-button> 
-                        <el-checkbox-button label=01    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
+                        <el-checkbox-button label=01    @change="transDay_Mdf1(2)" class=" text-red-700" ></el-checkbox-button>
                         <el-checkbox-button label=02    @change="transDay_Mdf1(2)"  ></el-checkbox-button> 
                         <el-checkbox-button label=03    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
                         <el-checkbox-button label=04    @change="transDay_Mdf1(2)"  ></el-checkbox-button>
