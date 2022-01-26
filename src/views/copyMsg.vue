@@ -551,6 +551,26 @@ var tempIOS_date = "";
             }   
         } ; 
         this.dispBkinfo.transOUTPUT = "即將為您安排在以下幾日: "+this.dispBkinfo._1M+this.dispBkinfo._2M+this.dispBkinfo._3M+this.dispBkinfo._4M;    
+      
+      
+      if (this.datePicked._1M.length ==0 ) { this.dispBkinfo._1M ="";  }
+      if (this.datePicked._2M.length ==0 ) { this.dispBkinfo._2M ="";  }
+      if (this.datePicked._3M.length ==0 ) { this.dispBkinfo._3M ="";  }
+      if (this.datePicked._4M.length ==0 ) { this.dispBkinfo._4M ="";  }
+      if (this.datePicked._5M.length ==0 ) { this.dispBkinfo._5M ="";  }
+      if (this.datePicked._6M.length ==0 ) { this.dispBkinfo._6M ="";  }
+
+      if (this.datePicked._1M.length ==0 &&
+          this.datePicked._2M.length ==0 &&
+          this.datePicked._3M.length ==0 &&
+          this.datePicked._4M.length ==0 &&
+          this.datePicked._5M.length ==0 &&
+          this.datePicked._6M.length ==0 
+      
+      ) { this.dispBkinfo.transOUTPUT ="";  }
+
+      
+      
       }, 
 
     // 這邊理解安排，看看todoList 相關參考的範例。
