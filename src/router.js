@@ -5,8 +5,8 @@ import Home from "./views/Home.vue";
 import User from "./views/User.vue";
 
 import Profile from "./views/Profile.vue";
-// import Orders from "./views/Orders.vue";
-// import MProducts from "./views/MProducts.vue";
+import Orders from "./views/Orders.vue";
+import MProducts from "./views/MProducts.vue";
 
 import {fb} from './firebase'
 
@@ -140,6 +140,12 @@ const router =  new Router({
         name: "DateList",
         component: () =>
           import("./views/DateList.vue")
+      },
+      {
+        path: "/DC",
+        name: "DateList",
+        component: () =>
+          import("./views/DC.vue")
       },
 
  

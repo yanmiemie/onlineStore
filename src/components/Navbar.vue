@@ -29,6 +29,10 @@
               <router-link to="/copyMsg" class="nav-link">可複製訊息</router-link>
             </li> 
 
+            <li class="nav-item"> 
+              <router-link to="/DC" class="nav-link">DC</router-link>
+            </li> 
+
             <!-- <li class="nav-item">
               <router-link to="/imgList" class="nav-link">IMG-List</router-link>
             </li> -->
