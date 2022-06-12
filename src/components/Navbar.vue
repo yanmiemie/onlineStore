@@ -33,6 +33,23 @@
               <router-link to="/DC" class="nav-link">DC</router-link>
             </li> 
 
+<!--  可以怎怎麼再安排 -->
+            <li class="nav-item"> 
+              <router-link to="/od4_Add" class="nav-link">增加加</router-link>
+            </li> 
+
+            <li class="nav-item"> 
+              <router-link to="/od4_Display" class="nav-link">清單</router-link>
+            </li> 
+
+            <li class="nav-item"> 
+              <router-link to="/od4_List" class="nav-link">列表</router-link>
+            </li> 
+
+            <li class="nav-item"> 
+              <router-link to="/od4_Mdf" class="nav-link">修正</router-link>
+            </li> 
+
             <!-- <li class="nav-item">
               <router-link to="/imgList" class="nav-link">IMG-List</router-link>
             </li> -->
@@ -93,7 +110,11 @@
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
-              <a class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#login" v-show="isLogin == 'no'">登入/註冊</a>
+              <a class="btn btn-outline-success my-2 my-sm-0" 
+                  type="submit" data-toggle="modal" 
+                  data-target="#login" 
+                  v-show="isLogin == 'no'"
+                  >登入/註冊</a>
               <a class="btn btn-outline-success my-2 my-sm-0" @click="logout()" v-show="isLogin == 'yes'">登出</a>
             </form>
 

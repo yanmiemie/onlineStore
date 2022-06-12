@@ -13,16 +13,16 @@
     <div>
        <ul class="todo-list  ">
         <li v-for="todo in todos"
-            class="border-2 border-gray-200 rounded-full py-1 px-4 my-2" > 
+            class="border-2 border-gray-200 rounded-full py-1 px-4 my-0.5" > 
             <input type="text" 
                     v-model="todo.text" 
                     placeholder="Add new todo"
-                    class="px-10 m-3 py-2 rounded-full bg-gray-100 focus:ring-2 focus:ring-blue-600 "  />  
+                    class="px-10 mx-1 py-1 rounded-full bg-gray-100 focus:ring-2 focus:ring-blue-600 "  />  
 
             <input type="text" 
                     v-model="todo.name" 
                     placeholder="Add new todo"
-                    class="px-10 m-3 py-2 rounded-full bg-gray-100 focus:ring-2 focus:ring-blue-600 "  />  
+                    class="px-10 mx-1 py-1 rounded-full bg-gray-100 focus:ring-2 focus:ring-blue-600 "  />  
  
  
 
@@ -32,7 +32,7 @@
             <button class="bg-green-500 text-gray-900  text-ms font-blod 
                           m-1 px-3 py-0.5 ml-4 rounded-full 
                           hover:bg-green-700 hover:text-gray-100  "
-                  @click="updateTodo(todo.key,todo)">更新</button>   
+                  @click="updateTodo(todo.key,Todos)">更新</button>   
         </li> 
       </ul> 
 
@@ -68,7 +68,7 @@
 
   </el-collapse-item>
 
- <el-collapse-item title="效率 Efficiency" name="3">
+ <el-collapse-item title="新增工具 Add Tools" name="3">
     <div class="grid grid-cols-2 gap-1">
   <div>
     <form v-on:submit.prevent="addTodo">
@@ -87,13 +87,13 @@
   </el-checkbox-group> 
    
 
-      <span class="demonstration"> 時間日期 </span>
+      <!-- <span class="demonstration"> 時間日期 </span>
       <el-date-picker
         v-model="newTodo.creatTime"
         type="date"
         placeholder="Pick a day"
         :picker-options="pickerOptions">
-      </el-date-picker> 
+      </el-date-picker>  -->
 
     </div>       
   </form> 
@@ -114,20 +114,9 @@
 </el-collapse> 
  
      
-    </div>
-  
-    </div>
-
-    {{ value3 }}
-    <hr>
-
-    
-    
-
-  </div>
-
-
-  
+      </div> 
+    </div> 
+  </div> 
 </template>
 
 
@@ -303,18 +292,11 @@ activeNames: ['1'],
      // Push new post in to Todos
     
     
-    addTodo(){
-      // this.newTodo.creatTime= WordDataServiceEXP.getdb();
-      // this.newTodo.creatTime = getTimeTrans(this.newTodo.creatTime) ;
-      // this.newTodo.creatTime = '2020-12-02' ;
-        
-
-      var data ={
-
+    addTodo(){  
+      var data ={ 
         text:this.newTodo.text,
         creatTime:this.newTodo.creatTime,
-        name:this.newTodo.name,
-
+        name:this.newTodo.name, 
       };
 
 
@@ -328,18 +310,71 @@ activeNames: ['1'],
             }); 
 
     },
-    updateTodo(key, value) {
+
+    // updateTutorial() {
+    //   const data = {
+    //     title: this.currentTutorial.title,
+    //     description: this.currentTutorial.description,
+    //   };
+
+    //   WordDataServiceEXP.update(this.currentTutorial.key, data)
+    //     .then(() => {
+    //       this.message = "更新成功!";
+    //     })
+    //     .catch((e) => {
+    //       console.log(e);
+    //     });
+    // }, 
 
 
-      WordDataServiceEXP.getAll().child(key).update(value);
-      Swal.fire({
+    // WordDataServiceEXP.getAll().child(key).update(value);
+    
+      // Swal.fire({
+      //         position: 'top',
+      //         icon: 'success',
+      //         title: '更新成功'+ key +  'value = ' + value ,
+      //         showConfirmButton: false,
+      //         timer: 1500
+      //       }); 
+
+      //  this..tmp_idx="";
+      // this.currentTutorial.left_time="";
+      // this.currentTutorial.memo="";
+
+    updateTodo(key, data) {
+      
+
+      const v = {   
+        name: data.name, 
+        text: data.text, 
+      };
+
+      WordDataServiceEXP.update(key, v)
+        .then(() => {
+           Swal.fire({
               position: 'top',
               icon: 'success',
-              title: '更新成功',
+              title: '更新成功'+ key +  'value = ' + value ,
               showConfirmButton: false,
               timer: 1500
-            }); 
+            });  
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     },
+
+    // updateTodo(key, value) { 
+      
+    //   WordDataServiceEXP.getAll().child(key).update(value);
+    //   Swal.fire({
+    //           position: 'top',
+    //           icon: 'success',
+    //           title: '更新成功',
+    //           showConfirmButton: false,
+    //           timer: 1500
+    //         }); 
+    // },
     // Remove child based on key - firebase function
     removeTodo(key) {  
       Swal.fire({
@@ -362,20 +397,7 @@ activeNames: ['1'],
             }
           }) 
     }, 
-    updateTutorial() {
-      const data = {
-        title: this.currentTutorial.title,
-        description: this.currentTutorial.description,
-      };
-
-      WordDataServiceEXP.update(this.currentTutorial.key, data)
-        .then(() => {
-          this.message = "更新成功!";
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    }, 
+    
     onDataChange(items) {
         let _tutorials = [];  
         items.forEach((item) => {

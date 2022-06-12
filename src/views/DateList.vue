@@ -127,14 +127,14 @@
       <div>
 
     <button class="text-lg text-gray-100 m-3 px-3 py-0.5 ml-4 rounded-full bg-red-400"
-            v-on:click="addTodo">新增</button>    
+            v-on:click="addTodo">新增 addTodo </button>    
   </div>
 </div> 
  
 <hr>
-{{ g }}
+<!-- {{ g }}
 
-{{ todo }} 
+{{ todo }}  -->
       <ul class="todo-list  ">
         <li v-for="todo in todos"
             class="border-2 border-gray-200 rounded-full py-1 px-4 my-2" > 
@@ -149,12 +149,12 @@
 
 
 
-      <el-date-picker
+      <!-- <el-date-picker
         v-model=" todo.creatTime"
         type="date"
         placeholder="Pick a day"
         :picker-options="pickerOptions">
-      </el-date-picker>
+      </el-date-picker> -->
 
             <button class="text-ms font-blod text-red-100 m-1 px-3 py-0.5 ml-4 rounded-full bg-red-400"
                   @click="removeTodo(todo.key)">刪除</button>

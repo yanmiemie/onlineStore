@@ -22,6 +22,32 @@ const router =  new Router({
     //   component: Home
     // },
     {
+      path: "/od4_Add",
+      name: "od4_Add",
+      component: () =>
+        import("./views/od4_Add.vue")
+    },
+    {
+      path: "/od4_Display",
+      name: "od4_Display",
+      component: () =>
+        import("./views/od4_Display.vue")
+    },
+    {
+      path: "/od4_List",
+      name: "od4_List",
+      component: () =>
+        import("./views/od4_List.vue")
+    },
+    {
+      path: "/od4_Mdf",
+      name: "od4_Mdf",
+      component: () =>
+        import("./views/od4_Mdf.vue")
+    },
+
+    // - - - - - - - - - - -
+    {
          path: "/home",
          name: "home",
          component: Home
